@@ -61,12 +61,17 @@ createApp({
         addItem() {
             const newItem = {
                 id: this.todo.length + 1,
-                text: "",
-                done: false
+                text: ''
             };
             this.todo.push(newItem);
         },
-        removeItem() {
+        removeItem(itemToRemove) {
+            const index = this.todo.findIndex(item => item.id === itemToRemove.id);
+            if (index !== -1) {
+                this.todo.splice(index, 1);
+            }
+        },
+        removeLastItem() {
             this.todo.pop();
         }
     }
