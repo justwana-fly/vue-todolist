@@ -16,13 +16,13 @@
 
 <body>
     
-
-    <header class="d-flex justify-content-between">
+<header class="d-flex justify-content-between">
         <div class="p-3">
             <img src="img/logo.png" alt="logo" class="black-logo-img">
         </div>
         <div class="dropdown p-3">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
                 Lista oggetti
             </button>
             <ul class="dropdown-menu">
@@ -31,13 +31,14 @@
             </ul>
         </div>
     </header>
-    
+
     <main>
         <div id="app">
             <ul class="list-group">
-                <li class="list-group-item d-flex justify-content-between flex-row-reverse" v-for="item in todo" :key="item.id" @click="toggleDone(item)">
+                <li class="list-group-item d-flex justify-content-between flex-row-reverse" v-for="item in todo"
+                    :key="item.id">
                     <i class="fa-solid fa-trash-can" style="color: #f45252;" @click.stop="removeItem(item)"></i>
-                    <input type="text" v-model="item.text" :class="{ 'green': item.done }">
+                    <input type="text" v-model="item.text" :class="{ 'green': item.done }" @click="toggleDone(item)">
                 </li>
             </ul>
             <button class="green" @click="addItem">Add</button>

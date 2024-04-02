@@ -54,8 +54,18 @@ createApp({
                     text: `Bussola`,
                     done: false,
                 },
-            ]
+            ],
+            showDone: false
         };
+    },
+    computed: {
+        filteredTodo() {
+            if (this.showDone) {
+                return this.todo.filter(item => item.done);
+            } else {
+                return this.todo.filter(item => !item.done);
+            }
+        }
     },
     methods: {
         addItem() {
@@ -77,6 +87,12 @@ createApp({
         },
         toggleDone(item) {
             item.done = !item.done;
+        },
+        showTaken() {
+            this.showDone = true;
+        },
+        showToTake() {
+            this.showDone = false;
         }
     }
 }).mount('#app');
