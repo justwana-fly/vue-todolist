@@ -1,0 +1,12 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.black-logo-img{
+    filter: grayscale(100%) invert(100%);
+}
+header {
+    background-color: beige;
+}
