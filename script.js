@@ -61,7 +61,8 @@ createApp({
         addItem() {
             const newItem = {
                 id: this.todo.length + 1,
-                text: ''
+                text: '',
+                done: false
             };
             this.todo.push(newItem);
         },
@@ -73,6 +74,9 @@ createApp({
         },
         removeLastItem() {
             this.todo.pop();
+        },
+        toggleDone(item) {
+            item.done = !item.done;
         }
     }
 }).mount('#app');
